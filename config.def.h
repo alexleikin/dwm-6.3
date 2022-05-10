@@ -72,6 +72,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 
 #include "movestack.c"
+#include "shiftview.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
@@ -105,6 +106,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY,                       XK_n,      shiftview,      {.i = +1 } },
+	{ MODKEY,                       XK_u,      shiftview,      {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	{ MODKEY,					              XK_Down,	moveresize,		{.v = (int []){ 0, 25, 0, 0  }} },
 	{ MODKEY,					              XK_Up,		moveresize,		{.v = (int []){ 0, -25, 0, 0  }} },
